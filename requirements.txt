@@ -1,0 +1,6 @@
+moviepy<2.0
+flask
+pillow
+google-generativeai
+python-dotenv
+openai

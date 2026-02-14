@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maha Shivaratri | The Night of Cosmic Awakening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glow-text">Maha Shivaratri</h1>
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="Epic_Video.mp4" type="video/mp4">
+            </video>
+            <p class="subtitle">The Night of Cosmic Awakening</p>
+            <div class="scroll-indicator">
+                <span>Explore the Journey</span>
+                <div class="arrow">↓</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="concept-intro">
+            <h2>Cosmic Vision</h2>
+            <p>A cinematic journey into the divine night of Lord Shiva. Experience the spiritual atmosphere, the holy
+                bells, and the cosmic dance of creation and destruction.</p>
+        </section>
+
+        <section class="scenes-timeline">
+
+            <div class="scene-card" style="--delay: 0.1s">
+                <div class="scene-number">01</div>
+                <div class="scene-info">
+                    <h3>The Awakening</h3>
+                    <p class="duration">5 Seconds</p>
+                    <p class="desc">Dark sky, stars appear, and the full moon rises over the Himalayas. The temple bells
+                        begin to ring.</p>
+                </div>
+            </div>
+
+            <div class="scene-card" style="--delay: 0.2s">
+                <div class="scene-number">02</div>
+                <div class="scene-info">
+                    <h3>The Offering</h3>
+                    <p class="duration">8 Seconds</p>
+                    <p class="desc">Devotees walk with oil lamps (diyas) and milk. The sacred sound of the Conch
+                        (Shankh) fills the air.</p>
+                </div>
+            </div>
+
+            <div class="scene-card" style="--delay: 0.3s">
+                <div class="scene-number">03</div>
+                <div class="scene-info">
+                    <h3>Abhishekam</h3>
+                    <p class="duration">10 Seconds</p>
+                    <p class="desc">Milk and water flow over the Shiva Lingam. "Om Namah Shivaya" chanting resonates.
+                    </p>
+                </div>
+            </div>
+
+            <div class="scene-card" style="--delay: 0.4s">
+                <div class="scene-number">04</div>
+                <div class="scene-info">
+                    <h3>The Divine Darshan</h3>
+                    <p class="duration">10 Seconds</p>
+                    <p class="desc">Lord Shiva meditating on Mount Kailash. The Ganges flows from his hair, glowing with
+                        divine blue light.</p>
+                </div>
+            </div>
+
+            <div class="scene-card" style="--delay: 0.5s">
+                <div class="scene-number">05</div>
+                <div class="scene-info">
+                    <h3>Tandava</h3>
+                    <p class="duration">10 Seconds</p>
+                    <p class="desc">The Cosmic Dance. Energy waves ripple through the galaxy as the Damru beats
+                        intensify.</p>
+                </div>
+            </div>
+
+            <div class="scene-card" style="--delay: 0.6s">
+                <div class="scene-number">06</div>
+                <div class="scene-info">
+                    <h3>The Blessing</h3>
+                    <p class="duration">7 Seconds</p>
+                    <p class="desc">Abhaya Mudra. Light spreads over the Earth. "Har Har Mahadev".</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="generate-section" id="studio">
+            <h2>AI Chat Co-Creator</h2>
+            <p>Talk to Gemini to design your divine vision. Describe your ideas and generate in real-time.</p>
+            <p style="font-size: 0.9rem; color: var(--accent-blue); margin-top: -10px; margin-bottom: 20px;">AI Video
+                Experience powered by Google Gemini</p>
+
+            <div id="chat-container">
+                <div id="chat-messages">
+                    <div class="message ai-message">
+                        Namaste! I am your Gemini Assistant. What kind of Maha Shivaratri video shall we create today?
+                        🕉️
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="userInput"
+                        placeholder="Describe your vision (e.g., 'A fiery tandava scene')..."
+                        onkeypress="if(event.key==='Enter') sendMessage()">
+                    <button onclick="sendMessage()" class="chat-send-btn">Send</button>
+                </div>
+
+                <div class="chat-quick-actions">
+                    <button class="action-btn"
+                        onclick="quickPrompt('Make a divine blue video about Kedarnath')">Kedarnath Vision</button>
+                    <button class="action-btn" onclick="quickPrompt('Create a fiery Tandava video in 4k')">Fiery
+                        Tandava</button>
+                    <button class="action-btn" onclick="quickPrompt('A peaceful golden morning temple scene')">Golden
+                        Morning</button>
+                </div>
+            </div>
+
+            <div id="generation-config"
+                style="display: none; margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid var(--accent-blue);">
+                <h3 style="margin-bottom: 1rem;">Video Settings</h3>
+                <div class="config-grid">
+                    <div class="form-group">
+                        <label>Theme</label>
+                        <select id="themeSelect">
+                            <option value="divine_blue">Divine Blue</option>
+                            <option value="fiery_tandava">Fiery Tandava</option>
+                            <option value="golden_morning">Golden Morning</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Resolution</label>
+                        <select id="resolutionSelect">
+                            <option value="480p">480p</option>
+                            <option value="720p">720p</option>
+                            <option value="1080p" selected>1080p</option>
+                            <option value="4k">4k</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Format</label>
+                        <select id="formatSelect">
+                            <option value="mp4">MP4</option>
+                            <option value="webm">WEBM</option>
+                            <option value="avi">AVI</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <button id="generateBtn" class="btn-glow" onclick="generateVideo()">✨ Finalize & Generate
+                        Video</button>
+                </div>
+            </div>
+
+            <div id="status" style="display: none;">
+                <div class="loader"></div>
+                <p id="statusText">Chanting mantras & rendering pixels...</p>
+            </div>
+
+            <div id="result" style="display: none;">
+                <h3>Your Divine Creation is Ready!</h3>
+                <video id="outputVideo" controls width="100%"
+                    style="border-radius: 12px; margin-top: 1rem; border: 2px solid var(--accent-gold);"></video>
+                <br>
+                <a id="downloadBtn" href="#" class="btn-glow"
+                    style="display: inline-block; margin-top: 1rem; text-decoration: none;">Download Video</a>
+                <button class="btn-glow"
+                    style="margin-top: 1rem; background: transparent; border: 1px solid var(--accent-gold);"
+                    onclick="resetCreator()">Create New</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Om Namah Shivaya 🙏</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.7;">Powered by Google Gemini</p>
+    </footer>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            input.value = '';
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    addMessage(data.reply, 'ai');
+                    document.getElementById('generation-config').style.display = 'block';
+                } else {
+                    addMessage("Forgive me, my connection to the cosmos is flickering. " + data.message, 'ai');
+                }
+            } catch (err) {
+                addMessage("Celestial error occurred. Please try again.", 'ai');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const chatMessages = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender}-message`;
+            msgDiv.innerText = text;
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function quickPrompt(text) {
+            document.getElementById('userInput').value = text;
+            sendMessage();
+        }
+
+        async function generateVideo() {
+            const btn = document.getElementById('generateBtn');
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            const resultDiv = document.getElementById('result');
+            const configDiv = document.getElementById('generation-config');
+
+            // Get values
+            const theme = document.getElementById('themeSelect').value;
+            const format = document.getElementById('formatSelect').value;
+            const resolution = document.getElementById('resolutionSelect').value;
+            const prompt = document.querySelector('.user-message:last-of-type')?.innerText || "Maha Shivaratri Vision";
+
+            btn.style.display = 'none';
+            statusDiv.style.display = 'block';
+            resultDiv.style.display = 'none';
+            configDiv.style.display = 'none';
+
+            statusText.innerText = "Chanting mantras & rendering pixels...";
+
+            try {
+                const response = await fetch('/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ theme, format, resolution, prompt })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') {
+                    statusDiv.style.display = 'none';
+                    resultDiv.style.display = 'block';
+
+                    const video = document.getElementById('outputVideo');
+                    video.src = `/download/${data.file}`;
+                    document.getElementById('downloadBtn').href = `/download/${data.file}`;
+                } else {
+                    alert('Celestial alignment failed. ' + data.message);
+                    btn.style.display = 'inline-block';
+                    statusDiv.style.display = 'none';
+                }
+
+            } catch (err) {
+                console.error(err);
+                alert('Connection to the divine lost.');
+                btn.style.display = 'inline-block';
+                statusDiv.style.display = 'none';
+            }
+        }
+
+        function resetCreator() {
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('chat-messages').innerHTML = '<div class="message ai-message">Namaste! I am your Gemini Assistant. What kind of Maha Shivaratri video shall we create today? 🕉️</div>';
+            document.getElementById('generateBtn').style.display = 'inline-block';
+        }
+    </script>
+</body>
+
+</html>
